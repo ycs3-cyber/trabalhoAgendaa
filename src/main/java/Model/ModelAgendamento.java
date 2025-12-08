@@ -1,51 +1,75 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author MEUPC
- */
 public class ModelAgendamento {
-    
-    private String nomeAgenda;
-    private Calendar dataAgenda;
-    
-    
-    public ModelAgendamento(String nomeAgenda , Calendar dataAgenda){
-        this.nomeAgenda = nomeAgenda;
-        this.dataAgenda = dataAgenda;
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        sdf.setLenient(false);
-       
-    }
-    
-      public String toFileString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        sdf.setLenient(false);
-        return nomeAgenda +  ";" + sdf.format(dataAgenda.getTime());
-        
+
+    private int id;
+    private String titulo;
+    private String descricao;
+    private LocalDateTime dataHora;
+    private boolean finalizado;
+
+    public ModelAgendamento(int id, String titulo, String descricao, LocalDateTime dataHora) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.dataHora = dataHora;
+        this.finalizado = false;
     }
 
-    public String getNomeAgenda() {
-        return nomeAgenda;
+    
+
+    public int getId() { 
+        return id; 
+    }
+    public void setId(int id) { 
+        this.id = id;
     }
 
-    public void setNomeAgenda(String nomeAgenda) {
-        this.nomeAgenda = nomeAgenda;
-    }
-
-    public Calendar getDataAgenda() {
-        return dataAgenda;
-    }
-
-    public void setDataAgenda(Calendar dataAgenda) {
-        this.dataAgenda = dataAgenda;
+    public String getTitulo() { 
+        return titulo; 
     }
     
+    public void setTitulo(String titulo) { 
+        this.titulo = titulo; 
+    }
+
+    public String getDescricao() { 
+        return descricao; 
+    }
+    
+    public void setDescricao(String descricao) {
+            this.descricao = descricao; 
+    }
+
+    public LocalDateTime getDataHora() { 
+        return dataHora;
+    }
+    
+    public void setDataHora(LocalDateTime dataHora) { 
+        this.dataHora = dataHora;
+    }
+
+    public boolean isFinalizado() { 
+        return finalizado;
+    }
+    
+    public void setFinalizado(boolean finalizado) { 
+        this.finalizado = finalizado; 
+    }
+
+    
+    
+    public String toFileString() {
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return id + ";" + titulo + ";" + descricao + ";" + dataHora.format(fmt) + ";" + finalizado;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return titulo + " - " + dataHora.format(fmt);
+    }
 }

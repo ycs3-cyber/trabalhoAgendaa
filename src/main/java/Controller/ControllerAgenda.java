@@ -1,48 +1,72 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller;
 
 import Model.AgendaDAO;
 import Model.ModelAgendamento;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author MEUPC
- */
 public class ControllerAgenda {
-    
+
     private AgendaDAO dao = new AgendaDAO();
+    private DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
     
-    public boolean cadastrarAgenda(String nomeAgenda , String dataAgenda){
-        if(nomeAgenda == null || nomeAgenda.trim().isEmpty()){
-             System.err.println("Erro: Nome não pode ser vazio.");
+    // cadastra funcionando
+    
+    public boolean cadastrarAgenda(String titulo, String descricao, String dataHoraTexto) {
+
+        if (titulo == null || titulo.trim().isEmpty()) {
+            System.err.println("Erro: título vazio.");
             return false;
         }
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        sdf.setLenient(false);
-        try{
-        Date data = sdf.parse(dataAgenda);
-        
-        Calendar dataFinal = Calendar.getInstance();
-        dataFinal.setTime(data);
-        
-         ModelAgendamento agenda = new ModelAgendamento( nomeAgenda , dataFinal);
-         dao.salvar(agenda);
-        }
-        catch(ParseException error){
-            System.err.println("Erro: data invalida!");
+
+        try {
+            LocalDateTime dataHora = LocalDateTime.parse(dataHoraTexto, formato);
+
+            // ainda não tem sistema de id tem q fazer dps
+            int id = gerarIdProvisorio();
+
+            ModelAgendamento ag = new ModelAgendamento(id, titulo, descricao, dataHora);
+
+            dao.salvar(ag);
+            return true;
+
+        } catch (Exception e) {
+            System.err.println("Erro ao cadastrar agenda: data/hora inválida.");
             return false;
         }
-       
-       
-        return true;
     }
+
+   // to usando um id falso so pra testar
+    private int gerarIdProvisorio() {
+    //tem q fazer gerar um id aí
+        return (int) (Math.random() * 100000); // dps a gente muda isso
+    }
+
    
-    
+    // listar tem q fazer
+   
+    public void listarAgendamentos() {
+        //bota a logica aq
+    }
+
+    //editar tem q fazer dps
+    public boolean editarAgenda(int id, String novoTitulo, String novaDescricao, String novaDataHora) {
+        // tem q buscar o agendamento e atualizar
+        return false;
+    }
+
+  
+    // deletar tbm
+    public boolean deletarAgenda(int id) {
+        // deleya
+        return false;
+    }
+
+    // finalizar yuri faz
+    public boolean finalizarAgenda(int id) {
+        // tem q marcar o finalizar com o check list la e chamar o atualizar pta funfar
+        return false;
+    }
+
 }
