@@ -4,6 +4,8 @@ import Model.AgendaDAO;
 import Model.ModelAgendamento;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControllerAgenda {
 
@@ -26,7 +28,7 @@ public class ControllerAgenda {
             dataHoraTexto = dataHoraTexto.trim();
             LocalDateTime dataHora = LocalDateTime.parse(dataHoraTexto, formato);
 
-            // ainda não tem sistema de id tem q fazer dps
+            
             int id = gerarIdProvisorio();
 
             ModelAgendamento ag = new ModelAgendamento(id, titulo, descricao, dataHora);
@@ -49,26 +51,38 @@ public class ControllerAgenda {
    
     // listar tem q fazer
    
-    public void listarAgendamentos() {
-        //bota a logica aq
+    public List<ModelAgendamento> listarAgendamentos() {
+        try {
+            // Delega a responsabilidade de buscar os dados para o DAO
+            return dao.listarTodos(); 
+        } catch (Exception e) {
+            System.err.println("Erro ao listar agendamentos: " + e.getMessage());
+            e.printStackTrace();
+            // Em caso de erro, retorna uma lista vazia para evitar que a View trave
+            return new ArrayList<>(); 
+        }
     }
 
     //editar tem q fazer dps
-    public boolean editarAgenda(int id, String novoTitulo, String novaDescricao, String novaDataHora) {
+    public boolean editarAgenda(int id, String novoTitulo, String novaDescricao, LocalDateTime novaDataHora) {
         // tem q buscar o agendamento e atualizar
-        return false;
+        ModelAgendamento agendaAtualizada = new ModelAgendamento(id ,novoTitulo ,  novaDescricao , novaDataHora);
+        return dao.atualizar(agendaAtualizada);
+        
     }
 
   
     // deletar tbm
     public boolean deletarAgenda(int id) {
         // deleya
-        return false;
+        
+        return dao.deletar(id);
     }
 
     // finalizar yuri faz
     public boolean finalizarAgenda(int id) {
         // tem q marcar o finalizar com o check list la e chamar o atualizar pta funfar
+        
         return false;
     }
 
