@@ -11,4 +11,3 @@ Model\ModelAgendamento.class
 view\ViewAgendamentoCadastrar$1.class
 Controller\ControllerAgenda.class
 view\ViewAgendamentoListar.class
-view\ViewAgendamentoCadastrar$2.class

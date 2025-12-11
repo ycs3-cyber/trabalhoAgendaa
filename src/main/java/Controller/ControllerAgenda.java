@@ -21,6 +21,9 @@ public class ControllerAgenda {
         }
 
         try {
+            System.out.println("Valor recebido da data/hora: [" + dataHoraTexto + "]");
+            
+            dataHoraTexto = dataHoraTexto.trim();
             LocalDateTime dataHora = LocalDateTime.parse(dataHoraTexto, formato);
 
             // ainda não tem sistema de id tem q fazer dps

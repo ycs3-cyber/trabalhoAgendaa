@@ -66,7 +66,7 @@ public class ViewAgendaHome extends javax.swing.JFrame {
         bottonCadastrar.setBackground(new java.awt.Color(76, 175, 80));
         bottonCadastrar.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         bottonCadastrar.setForeground(new java.awt.Color(255, 255, 255));
-        bottonCadastrar.setText("Cadastrar Agendamento");
+        bottonCadastrar.setText("Criar Agendamento");
         bottonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bottonCadastrarActionPerformed(evt);
