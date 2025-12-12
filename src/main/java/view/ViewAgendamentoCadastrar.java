@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @author Pichau
  */
 public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ViewAgendamentoCadastrar.class.getName());
 
     /**
@@ -73,10 +73,6 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
             }
         });
 
-        jFieldTitulo.setText("jTextField1");
-
-        jFieldDataHora.setText("jTextField2");
-
         jScrollPane2.setViewportView(jTextDescricao);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -99,12 +95,12 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
                                     .addComponent(jFieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(326, 326, 326)
+                        .addGap(298, 298, 298)
                         .addComponent(buttonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
+                        .addGap(195, 195, 195)
                         .addComponent(jLabel1)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,29 +139,43 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
-    String titulo =jFieldTitulo.getText();
-    String dataHoraTexto = jFieldDataHora.getText();
-    String descricao = jTextDescricao.getText();
-    
-    ControllerAgenda controller = new ControllerAgenda();  
-    
-    boolean sucesso = controller.cadastrarAgenda(titulo, descricao, dataHoraTexto);
-    
-    if (sucesso){
-        this.dispose();
-        
-     ViewAgendaHome home = new ViewAgendaHome ();
-     home.setVisible(true);
-    }
-            
-    
-    }//GEN-LAST:event_buttonSalvarActionPerformed
+        String titulo = jFieldTitulo.getText();
+        String dataHoraTexto = jFieldDataHora.getText();
+        String descricao = jTextDescricao.getText();
 
-    /**
-     * @param args the command line arguments
-     */
+
+        ControllerAgenda controller = new ControllerAgenda();
+        boolean sucesso = controller.cadastrarAgenda(titulo, descricao, dataHoraTexto);
+
+        if (sucesso) {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Agendamento feito com sucesso!"
+            );
+
+           
+            this.dispose();
+
+         
+            ViewAgendaHome home = new ViewAgendaHome();
+            home.setVisible(true);
+
+        } else {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Erro na data ou hora! Verifique e tente novamente."
+            );
+
+            
+        }
+         
+    }
+       
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -181,10 +191,11 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ViewAgendamentoCadastrar().setVisible(true));
-    }
+
+
+    }//GEN-LAST:event_buttonSalvarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSalvar;

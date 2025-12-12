@@ -19,8 +19,18 @@ public class ModelAgendamento {
         this.finalizado = false;
     }
 
-    
+    public String toFileString() {
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
 
+    return id + ";" +
+           titulo + ";" +
+           descricao + ";" +
+           dataHora.format(fmt) + ";" +
+           finalizado;
+}
+
+    
+    
     public int getId() { 
         return id; 
     }
@@ -59,17 +69,14 @@ public class ModelAgendamento {
     public void setFinalizado(boolean finalizado) { 
         this.finalizado = finalizado; 
     }
-
     
-    
-    public String toFileString() {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return id + ";" + titulo + ";" + descricao + ";" + dataHora.format(fmt) + ";" + finalizado;
-    }
-
-    @Override
-    public String toString() {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return titulo + " - " + dataHora.format(fmt);
-    }
+    public String getDataHoraTexto() {
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
+    return dataHora.format(fmt);
 }
+
+}
+
+
+    
+  

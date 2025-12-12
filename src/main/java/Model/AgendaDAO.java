@@ -1,4 +1,4 @@
-package Model;
+ package Model;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -121,6 +121,36 @@ public class AgendaDAO {
         
    
     }
+    
+  public ModelAgendamento buscarPorId(int id) {
+      List<ModelAgendamento> lista = listarTodos();
+      
+      for (ModelAgendamento ag : lista){
+          if (ag.getId() == id){
+              return ag;
+          }
+      }
+      return null;
+  } 
+
+
+public boolean marcarComoFinalizado(int id){
+   List<ModelAgendamento> lista = listarTodos();
+   boolean alterou = false;
+   
+   for (ModelAgendamento ag : lista){
+       if (ag.getId() == id){
+           ag.setFinalizado(true);
+           alterou = true;
+           break;
+       }
+   }
+
+if (alterou){
+    reescreverArquivo(lista);
+    return true;
 }
 
-
+return false;
+}
+}
