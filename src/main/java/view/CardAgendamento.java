@@ -174,7 +174,7 @@ public class CardAgendamento extends javax.swing.JPanel {
     );
 
     if (resp != javax.swing.JOptionPane.YES_OPTION) {
-        return; // usuário cancelou
+        return; 
     }
 
     boolean ok = new Controller.ControllerAgenda().deletarAgenda(id);
@@ -187,7 +187,7 @@ public class CardAgendamento extends javax.swing.JPanel {
                 javax.swing.JOptionPane.INFORMATION_MESSAGE
         );
 
-        if (onChange != null) onChange.run(); // recarrega a lista
+        if (onChange != null) onChange.run(); 
     } else {
         javax.swing.JOptionPane.showMessageDialog(
                 this,
@@ -203,7 +203,7 @@ public class CardAgendamento extends javax.swing.JPanel {
          java.awt.Frame frame = (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this);
 
     ViewAgendamentoEditar dlg = new ViewAgendamentoEditar(frame, true, this.id, () -> {
-        if (onChange != null) onChange.run(); // recarrega a lista
+        if (onChange != null) onChange.run(); 
     });
 
     dlg.setLocationRelativeTo(frame);
