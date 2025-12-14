@@ -3,6 +3,7 @@ package Model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// model camile e yuri 
 public class ModelAgendamento {
 
     private int id;
@@ -20,7 +21,7 @@ public class ModelAgendamento {
     }
 
     public String toFileString() {
-    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     return id + ";" +
            titulo + ";" +
@@ -71,7 +72,7 @@ public class ModelAgendamento {
     }
     
     public String getDataHoraTexto() {
-    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
     return dataHora.format(fmt);
 }
 

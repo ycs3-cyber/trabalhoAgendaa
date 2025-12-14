@@ -1,4 +1,3 @@
-63208;Ir pra escola;Aula de matemática;11/02/2025 11:20;true
 63209;Dentista;Consulta de rotina;12/02/2025 09:00;false
 63210;Mercado;Comprar frutas e pão;12/02/2025 16:30;true
 63211;Trabalho;Reunião com a equipe;13/02/2025 10:15;false
@@ -16,5 +15,3 @@
 63223;Cachorro;Levar pra passear;18/02/2025 17:40;true
 63224;TCC;Escrever capítulo 2;19/02/2025 09:50;false
 63225;Netflix;Assistir série nova;19/02/2025 21:00;true
-63226;Jantar;Sair com amigos;20/02/2025 20:15;false
-63227;Compras;Comprar roupas;20/02/2025 16:00;false

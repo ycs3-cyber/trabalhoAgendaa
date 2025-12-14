@@ -9,7 +9,7 @@ package view;
  * @author Pichau
  */
 public class ViewAgendaHome extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ViewAgendaHome.class.getName());
 
     /**
@@ -17,6 +17,16 @@ public class ViewAgendaHome extends javax.swing.JFrame {
      */
     public ViewAgendaHome() {
         initComponents();
+        pnlResumo.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
+        pnlHoje.setLayout(new javax.swing.BoxLayout(pnlHoje, javax.swing.BoxLayout.Y_AXIS));
+        pnlHoje.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        pnlPendentes.setLayout(new javax.swing.BoxLayout(pnlPendentes, javax.swing.BoxLayout.Y_AXIS));
+        pnlPendentes.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        pnlConfirmados.setLayout(new javax.swing.BoxLayout(pnlConfirmados, javax.swing.BoxLayout.Y_AXIS));
+        pnlConfirmados.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
     }
 
     /**
@@ -31,27 +41,24 @@ public class ViewAgendaHome extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         bottonCadastrar = new javax.swing.JButton();
         jButtonListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(242, 244, 247));
+        jPanel1.setBackground(new java.awt.Color(243, 244, 246));
 
+        jLabel1.setBackground(new java.awt.Color(31, 41, 51));
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(45, 45, 45));
+        jLabel1.setForeground(new java.awt.Color(31, 41, 51));
         jLabel1.setText("Seja Bem-Vindo(a)");
 
+        jLabel2.setBackground(new java.awt.Color(117, 117, 117));
         jLabel2.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 109, 109));
-        jLabel2.setText("ao sistema de agendamento");
+        jLabel2.setForeground(new java.awt.Color(107, 114, 128));
+        jLabel2.setText("ao Sistema de agendamento");
 
-        jLabel3.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(45, 45, 45));
-        jLabel3.setText("O que deseja fazer?");
-
-        bottonCadastrar.setBackground(new java.awt.Color(76, 175, 80));
+        bottonCadastrar.setBackground(new java.awt.Color(124, 58, 237));
         bottonCadastrar.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         bottonCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         bottonCadastrar.setText("Criar Agendamento");
@@ -62,7 +69,7 @@ public class ViewAgendaHome extends javax.swing.JFrame {
             }
         });
 
-        jButtonListar.setBackground(new java.awt.Color(102, 126, 239));
+        jButtonListar.setBackground(new java.awt.Color(79, 70, 229));
         jButtonListar.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButtonListar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListar.setText("Listar Agendamentos");
@@ -77,37 +84,32 @@ public class ViewAgendaHome extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(197, 197, 197))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
+                        .addGap(57, 57, 57)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(302, 302, 302)
+                        .addGap(116, 116, 116)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bottonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jButtonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(bottonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(bottonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButtonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(bottonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,7 +120,7 @@ public class ViewAgendaHome extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -126,17 +128,17 @@ public class ViewAgendaHome extends javax.swing.JFrame {
 
     private void bottonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonCadastrarActionPerformed
         this.dispose();
-        
-     ViewAgendamentoCadastrar cd = new ViewAgendamentoCadastrar ();
-     cd.setVisible(true);
+
+        ViewAgendamentoCadastrar cd = new ViewAgendamentoCadastrar();
+        cd.setVisible(true);
     }//GEN-LAST:event_bottonCadastrarActionPerformed
 
     private void jButtonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarActionPerformed
-                                              
+
         this.dispose();
-        
-     ViewAgendamentoListar listar = new ViewAgendamentoListar ();
-     listar.setVisible(true);
+
+        ViewAgendamentoListar listar = new ViewAgendamentoListar();
+        listar.setVisible(true);
     }//GEN-LAST:event_jButtonListarActionPerformed
 
     /**
@@ -169,7 +171,11 @@ public class ViewAgendaHome extends javax.swing.JFrame {
     private javax.swing.JButton jButtonListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

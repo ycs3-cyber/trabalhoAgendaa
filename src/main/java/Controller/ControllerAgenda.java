@@ -13,7 +13,7 @@ public class ControllerAgenda {
     private DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     
-    // cadastra funcionando
+    // controller feito por yuri
     
     public boolean cadastrarAgenda(String titulo, String descricao, String dataHoraTexto) {
 
@@ -71,7 +71,7 @@ public class ControllerAgenda {
         return dao.deletar(id);
     }
 
-    // finalizar yuri faz
+    
     public boolean finalizarAgenda(int id) {
        return dao.marcarComoFinalizado(id);
         

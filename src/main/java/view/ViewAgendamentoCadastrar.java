@@ -42,38 +42,61 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
         jFieldDataHora = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextDescricao = new javax.swing.JTextPane();
+        buttonVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(242, 244, 247));
+        jPanel1.setBackground(new java.awt.Color(243, 244, 246));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(45, 45, 45));
+        jLabel1.setForeground(new java.awt.Color(31, 41, 51));
         jLabel1.setText("Criar Agendamento");
 
         jLabel2.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel2.setForeground(new java.awt.Color(55, 65, 81));
         jLabel2.setText("Descrição:");
 
         jLabel3.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel3.setForeground(new java.awt.Color(55, 65, 81));
         jLabel3.setText("Data e hora:");
 
         jLabel4.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(109, 109, 109));
+        jLabel4.setForeground(new java.awt.Color(55, 65, 81));
         jLabel4.setText("Título:");
 
-        buttonSalvar.setBackground(new java.awt.Color(76, 175, 80));
+        buttonSalvar.setBackground(new java.awt.Color(124, 58, 237));
         buttonSalvar.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
         buttonSalvar.setForeground(new java.awt.Color(255, 255, 255));
         buttonSalvar.setText("Salvar");
+        buttonSalvar.setBorder(null);
         buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSalvarActionPerformed(evt);
             }
         });
 
+        jFieldTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        jFieldTitulo.setForeground(new java.awt.Color(31, 41, 51));
+        jFieldTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(209, 213, 219)));
+
+        jFieldDataHora.setBackground(new java.awt.Color(255, 255, 255));
+        jFieldDataHora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(209, 213, 219)));
+
+        jTextDescricao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextDescricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(209, 213, 219)));
+        jTextDescricao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane2.setViewportView(jTextDescricao);
+
+        buttonVoltar.setBackground(new java.awt.Color(153, 153, 255));
+        buttonVoltar.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+        buttonVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonVoltar.setText("Voltar");
+        buttonVoltar.setBorder(null);
+        buttonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,46 +105,52 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
+                        .addContainerGap()
+                        .addComponent(buttonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane2)
+                                .addComponent(jLabel2)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(128, 128, 128)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jFieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(138, 138, 138)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jFieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(buttonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                                .addGap(130, 130, 130)
+                                .addComponent(buttonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel1)))))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(20, 20, 20)
+                .addComponent(buttonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jFieldDataHora, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(jFieldTitulo))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFieldDataHora, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(buttonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,9 +225,18 @@ public class ViewAgendamentoCadastrar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
+    private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
+       this.dispose();
+
+         
+            ViewAgendaHome home = new ViewAgendaHome();
+            home.setVisible(true);
+    }//GEN-LAST:event_buttonVoltarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSalvar;
+    private javax.swing.JButton buttonVoltar;
     private javax.swing.JTextField jFieldDataHora;
     private javax.swing.JTextField jFieldTitulo;
     private javax.swing.JLabel jLabel1;
