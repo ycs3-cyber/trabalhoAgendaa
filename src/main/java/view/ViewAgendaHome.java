@@ -17,16 +17,7 @@ public class ViewAgendaHome extends javax.swing.JFrame {
      */
     public ViewAgendaHome() {
         initComponents();
-        pnlResumo.setLayout(new java.awt.GridLayout(1, 3, 20, 0));
-        pnlHoje.setLayout(new javax.swing.BoxLayout(pnlHoje, javax.swing.BoxLayout.Y_AXIS));
-        pnlHoje.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
-        pnlPendentes.setLayout(new javax.swing.BoxLayout(pnlPendentes, javax.swing.BoxLayout.Y_AXIS));
-        pnlPendentes.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
-        pnlConfirmados.setLayout(new javax.swing.BoxLayout(pnlConfirmados, javax.swing.BoxLayout.Y_AXIS));
-        pnlConfirmados.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
+     
     }
 
     /**
